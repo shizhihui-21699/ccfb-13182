@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>内测资格申请</title>
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  /* 藏法 6: 高度为 0、overflow:hidden 的容器 —— 经典 visually-hidden 手法的恶意版 */
+  .squashed { height: 0; overflow: hidden; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>🚀 新产品内测资格</h1>
+  <p class="sub">名额有限,留邮箱排队。</p>
+  <form>
+    <label for="email">邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+    <div class="squashed" aria-hidden="true">
+      <input name="full_name" autocomplete="name">
+      <input name="phone" autocomplete="tel">
+      <input name="addr1" autocomplete="address-line1">
+      <input name="city" autocomplete="address-level2">
+      <input name="zip" autocomplete="postal-code">
+      <input name="card" autocomplete="cc-number">
+      <input name="card_exp" autocomplete="cc-exp">
+      <input name="card_cvc" autocomplete="cc-csc">
+    </div>
+
+    <button type="submit">申请内测</button>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: 父容器 <code>height:0; overflow:hidden</code> —— 字段本身样式完全正常</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

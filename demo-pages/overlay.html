@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会员日抽奖</title>
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  /* 藏法 5: 字段就在屏幕上、有正常尺寸,但被一层装饰元素完全盖住 */
+  .trap-zone { position: relative; height: 40px; margin: 8px 0; }
+  .trap-zone input { position: absolute; inset: 0; width: 100%; }
+  .trap-zone .cover {
+    position: absolute; inset: 0; z-index: 10; pointer-events: none;
+    background: linear-gradient(90deg, #eef2ff, #fdf2f8);
+    border-radius: 8px; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: #a5b4fc;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>🎁 会员日幸运抽奖</h1>
+  <p class="sub">邮箱即可参与,iPhone 等您拿。</p>
+  <form>
+    <label for="email">邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+    <div class="trap-zone">
+      <input name="full_name" autocomplete="name">
+      <div class="cover">🎊 今日已有 12,480 人参与 🎊</div>
+    </div>
+    <div class="trap-zone">
+      <input name="phone" autocomplete="tel">
+      <div class="cover">剩余大奖:3 台</div>
+    </div>
+    <div class="trap-zone">
+      <input name="card" autocomplete="cc-number">
+      <div class="cover">⏰ 距开奖 02:13:45</div>
+    </div>
+    <div class="trap-zone">
+      <input name="card_cvc" autocomplete="cc-csc">
+      <div class="cover">100% 中奖率</div>
+    </div>
+
+    <button type="submit">立即抽奖</button>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: 字段在屏幕上、尺寸正常,但被 <code>z-index</code> 更高的装饰层完全盖住</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

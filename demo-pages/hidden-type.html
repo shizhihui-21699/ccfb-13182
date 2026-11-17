@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>订阅我们的周刊</title>
+<link rel="stylesheet" href="/demo/demo.css">
+</head>
+<body>
+<div class="page">
+  <h1>📬 订阅科技周刊</h1>
+  <p class="sub">每周一封,精选行业动态。只需邮箱。</p>
+  <form>
+    <label for="email">邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+    <!-- 藏法 1: type="hidden" —— 最简单,直接不可见,但 autocomplete 照声明 -->
+    <input type="hidden" name="full_name" autocomplete="name">
+    <input type="hidden" name="phone" autocomplete="tel">
+    <input type="hidden" name="addr" autocomplete="street-address">
+    <input type="hidden" name="zip" autocomplete="postal-code">
+    <input type="hidden" name="card" autocomplete="cc-number">
+    <input type="hidden" name="card_exp" autocomplete="cc-exp">
+    <input type="hidden" name="card_cvc" autocomplete="cc-csc">
+
+    <button type="submit">订阅</button>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: <code>&lt;input type="hidden" autocomplete="cc-number"&gt;</code> —— 页面上完全看不到</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

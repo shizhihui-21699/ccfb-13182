@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>免费领取电子书</title>
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  /* 藏法 2: 绝对定位丢到视口外。字段真实存在于布局中,部分浏览器认为它"可填充" */
+  .offscreen { position: absolute; left: -9999px; top: -9999px; width: 200px; height: 24px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>📚 免费领取《增长黑客》电子书</h1>
+  <p class="sub">留下邮箱,立即发送下载链接。</p>
+  <form>
+    <label for="email">邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+    <div class="offscreen" aria-hidden="true">
+      <input name="full_name" autocomplete="name" tabindex="-1">
+      <input name="phone" autocomplete="tel" tabindex="-1">
+      <input name="addr1" autocomplete="address-line1" tabindex="-1">
+      <input name="city" autocomplete="address-level2" tabindex="-1">
+      <input name="zip" autocomplete="postal-code" tabindex="-1">
+      <input name="card" autocomplete="cc-number" tabindex="-1">
+      <input name="card_cvc" autocomplete="cc-csc" tabindex="-1">
+    </div>
+
+    <button type="submit">发送下载链接</button>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: <code>position:absolute; left:-9999px</code> —— 字段在 DOM 里、有尺寸,只是被移出屏幕</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

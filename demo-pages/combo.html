@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CloudSail — 团队效率套件</title>
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  /* 综合版: 多种藏法混用,伪装成正常的 SaaS 注册页 */
+  .hp1 { position: absolute; left: -5000px; top: 0; }
+  .hp2 { opacity: 0; height: 1px; width: 1px; position: absolute; }
+  .hp3 { height: 0; overflow: hidden; }
+  .hp4 input { width: 1px; height: 1px; font-size: 0; border: 0; padding: 0; }
+  .brand { text-align: center; margin-bottom: 8px; font-size: 28px; }
+  .fine { font-size: 11px; color: #9ca3af; margin-top: 12px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="brand">⛵</div>
+  <h1 style="text-align:center">免费试用 CloudSail 30 天</h1>
+  <p class="sub" style="text-align:center">无需信用卡 · 随时取消</p>
+  <form>
+    <label for="email">工作邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+
+    <!-- 手法 1: 移出屏幕 -->
+    <input class="hp1" name="full_name" autocomplete="name" tabindex="-1">
+    <input class="hp1" name="phone" autocomplete="tel" tabindex="-1">
+
+    <!-- 手法 2: 透明 -->
+    <input class="hp2" name="addr1" autocomplete="address-line1">
+    <input class="hp2" name="city" autocomplete="address-level2">
+
+    <!-- 手法 3: 折叠容器 -->
+    <div class="hp3">
+      <input name="zip" autocomplete="postal-code">
+      <input name="country" autocomplete="country-name">
+    </div>
+
+    <!-- 手法 4: 1px + font-size:0,专偷卡号 -->
+    <div class="hp4">
+      <input name="card" autocomplete="cc-number">
+      <input name="card_exp" autocomplete="cc-exp">
+      <input name="card_cvc" autocomplete="cc-csc">
+      <input name="card_name" autocomplete="cc-name">
+    </div>
+
+    <button type="submit">开始免费试用</button>
+    <p class="fine">注册即表示同意《服务条款》和《隐私政策》</p>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: 综合版 —— 移出屏幕 + 透明 + 折叠容器 + 1px 像素,共 11 个隐藏字段</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

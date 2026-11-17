@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>优惠券已为您保留</title>
+<link rel="stylesheet" href="/demo/demo.css">
+<style>
+  /* 藏法 3: 透明 + 极小尺寸。元素仍在页面上占位 1px,肉眼不可见 */
+  .ghost { opacity: 0.01; width: 1px; height: 1px; padding: 0; border: 0; position: absolute; }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>🎟️ 您的 85 折优惠券已保留</h1>
+  <p class="sub">输入邮箱,优惠码即刻送达。</p>
+  <form>
+    <label for="email">邮箱</label>
+    <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+
+    <input class="ghost" name="full_name" autocomplete="name">
+    <input class="ghost" name="phone" autocomplete="tel">
+    <input class="ghost" name="addr1" autocomplete="address-line1">
+    <input class="ghost" name="card" autocomplete="cc-number">
+    <input class="ghost" name="card_exp" autocomplete="cc-exp">
+    <input class="ghost" name="card_cvc" autocomplete="cc-csc">
+
+    <button type="submit">领取优惠码</button>
+  </form>
+  <div id="received"></div>
+</div>
+<p class="technique">藏法: <code>opacity:0.01; width:1px; height:1px</code> —— 元素"存在"但看不见</p>
+<script src="/demo/demo.js"></script>
+</body>
+</html>

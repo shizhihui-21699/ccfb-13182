@@ -1,0 +1,9 @@
+{
+  "name": "autofill-guard",
+  "private": true,
+  "scripts": {
+    "setup": "cd server && npm install && npx playwright install chromium && cd ../web && npm install",
+    "build": "cd server && npm run build && cd ../web && npm run build",
+    "start": "cd server && npm start"
+  }
+}

@@ -1,0 +1,12 @@
+body { font-family: system-ui, sans-serif; background: #f8fafc; color: #1f2937; }
+.page { max-width: 420px; margin: 60px auto; background: #fff; padding: 32px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,.08); }
+h1 { font-size: 20px; margin-top: 0; }
+p.sub { color: #6b7280; font-size: 14px; }
+label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 4px; }
+input[type=email], input[type=text] { width: 100%; padding: 10px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; box-sizing: border-box; }
+button { margin-top: 18px; width: 100%; padding: 12px; background: #2563eb; color: #fff; border: 0; border-radius: 8px; font-size: 15px; cursor: pointer; }
+button:hover { background: #1d4ed8; }
+#received { display: none; margin-top: 24px; background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 12px 16px; font-size: 13px; }
+#received table { border-collapse: collapse; width: 100%; background: #fff; }
+#received td { font-size: 12px; word-break: break-all; }
+.technique { max-width: 420px; margin: 16px auto 0; font-size: 12px; color: #9ca3af; text-align: center; }

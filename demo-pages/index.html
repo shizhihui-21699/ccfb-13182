@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>自动填充窃取 · 演示页面合集</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 20px; color: #1f2937; }
+  h1 { font-size: 24px; }
+  .warn { background: #fef3c7; border: 1px solid #f59e0b; padding: 12px 16px; border-radius: 8px; font-size: 14px; }
+  ul { line-height: 2; }
+  code { background: #f3f4f6; padding: 1px 6px; border-radius: 4px; }
+  a { color: #2563eb; }
+</style>
+</head>
+<body>
+<h1>🎣 自动填充窃取演示页面</h1>
+<p class="warn">这些页面是<b>检测服务的测试靶子</b>。每个页面看起来只问你要邮箱，但表单里用不同手法藏了声明
+<code>autocomplete</code> 类别的输入框。浏览器/密码管理器执行自动填充时会把地址、电话、卡号一起填进去并随表单提交。</p>
+<p>用法:打开某个页面 → 在邮箱框触发浏览器自动填充 → 点提交,页面会显示<b>服务器实际收到的全部字段</b>。
+也可以用检测服务扫描这些页面,对比报告。</p>
+<ul>
+  <li><a href="/demo/hidden-type.html">hidden-type.html</a> — <code>type="hidden"</code> 直接藏</li>
+  <li><a href="/demo/offscreen.html">offscreen.html</a> — 绝对定位移到屏幕外 <code>left:-9999px</code></li>
+  <li><a href="/demo/opacity.html">opacity.html</a> — 透明度 0 + 1px 尺寸</li>
+  <li><a href="/demo/tiny.html">tiny.html</a> — 1×1 像素 + font-size:0</li>
+  <li><a href="/demo/overlay.html">overlay.html</a> — 字段在屏幕上但被装饰层盖住</li>
+  <li><a href="/demo/collapsed.html">collapsed.html</a> — 藏在 height:0 / overflow:hidden 容器里</li>
+  <li><a href="/demo/combo.html">combo.html</a> — 综合版:伪装成订阅页的完整钓鱼表单</li>
+</ul>
+</body>
+</html>
